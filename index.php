@@ -10,6 +10,17 @@
     <title>Music Disk</title>
 </head>
 <body>
+    <header> 
+        <div class="row header">
+            <img class="logo" src="./img/piano-logo-icon-vector-design-illustration-template_612390-542.avif">
+            <ul class="link-header">
+                <li class="li-header"><a href="#">Home</a></li>
+                <li class="li-header"><a href="#">Preferiti</a></li>
+                <li class="li-header"><a href="#">Nuove uscite</a> </li>
+                <li class="li-header"><a href="#">Profilo</a></li>
+            </ul>
+        </div>
+    </header>
    <section>
      <div id="app">
         <div class="container">
@@ -17,7 +28,8 @@
                 <div class="col">
                     <div v-if="music_disks.length > 0" class="container">
                         <div class="row">
-                            <div v-for="disk in music_disks" class="music-card txt-center ">
+                            <div class="modale">modale</div>
+                            <div v-for="disk in music_disks" class="music-card txt-center " @click="">
                                 <div class="txt-center">
                                     <img class="img-poster" :src="disk.poster">
                                 </div>
@@ -45,6 +57,23 @@
 
 <style>
 
+    a{
+        text-decoration: none;
+        color: currentcolor;
+    }
+
+    ul,li,ol,menu{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header{
+        background: black;
+        border-radius: 5px;
+        color: white;
+    }
+
 
 
     body{
@@ -53,10 +82,11 @@
         font-family: "Poppins", sans-serif;
         font-weight: 700;
         font-style: normal;
+        margin: 0;
     }
 
     .music-card{
-        background-color: rgba(10, 91, 12, 0.5);
+        background-color: rgba(39, 47, 39, 0.66);
         width: 20%;
         margin: 10px;
         padding: 18px;
@@ -84,5 +114,28 @@
         font-family: "Poppins", sans-serif;
         font-weight: 300;
         font-style: normal;
+    }
+
+    .modale{
+        display: none;
+    }
+
+    .link-header{
+        display: flex;
+        padding-top: 25px;
+    }
+
+    .header{
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .li-header{
+        margin-right: 15px;
+    }
+
+    .logo{
+        width: 80px;
+        aspect-ratio: 1/1;
     }
 </style>

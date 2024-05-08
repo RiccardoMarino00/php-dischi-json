@@ -14,6 +14,9 @@ const { createApp } = Vue
                 this.music_disks = res.data
             })
         },
+        showModal(i){
+        
+        }
     },
     created(){
         this.fetchDisk()
