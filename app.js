@@ -11,6 +11,7 @@ const { createApp } = Vue
         fetchDisk() {
             axios.get('./server.php').then((res)=> {
                 console.log(res.data)
+                this.music_disks = res.data
             })
         },
     },
