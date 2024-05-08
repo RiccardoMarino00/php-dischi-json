@@ -56,37 +56,27 @@ $music_disks = [
     <title>Music Disk</title>
 </head>
 <body>
-   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <section>
-        <div id="app">{{ message }}</div>
+     <div id="app">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <?php
-                    for($i = 0; $i < count($music_disks); $i++){
-                        $disk = $music_disks[$i];
-                        $title = $disk['title'];
-                        $author = $disk['author'];
-                        $year = $disk['year'];
-                        $poster = $disk['poster'];
-                        $genre = $disk['genre'];
-                        var_dump($title, $author, $year, $poster, $genre);
-
-                    ?>
-                       <div>
-                        <p> <?php echo $title; ?>  </p>
-                        <p> <?php echo $author; ?> </p>
-                        <p> <?php echo $year; ?> </p>
-                        <img src="<?php echo $poster; ?>"> 
-                        <p> <?php echo $genre; ?> </p>
+                    <div v-if="music_disks.length > 0">
+                        <div v-for="disk in music_disks">
+                            <p>   </p>
+                            <p>  </p>
+                            <p>  </p>
+                            <img src=""> 
+                            <p>  </p>
                        </div>
-                    <?php
-                    }
-                    ?>
+                    </div>
+                    <span v-else>Non ci sono risultati</span>
                 </div>
             </div>
-
         </div>
+     </div>
+        
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="./app.js"></script>
    </section>
    
